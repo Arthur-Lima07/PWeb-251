@@ -1,0 +1,19 @@
+<%- include('./partials/header') %>
+
+<main>
+  <div class="ui segment">
+    <h1><%= character.name %></h1>
+    <p><strong>Descrição:</strong> <%= character.description %></p>
+
+    <h3>Habilidades:</h3>
+    <ul>
+      <% character.skills.forEach(function(skill) { %>
+        <li><%= skill %></li>
+      <% }); %>
+    </ul>
+
+    <a href="/personagens">← Voltar</a>
+  </div>
+</main>
+
+<%- include('./partials/footer') %>
