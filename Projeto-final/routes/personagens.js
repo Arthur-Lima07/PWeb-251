@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-// Lista completa dos personagens (usaremos em ambas as rotas)
 const allCharacters = [
   {
     name: 'Blaze',
@@ -35,7 +34,6 @@ const allCharacters = [
   }
 ];
 
-// Rota principal - listagem e busca
 router.get('/', function(req, res, next) {
   const searchQuery = req.query.search;
   let characters = allCharacters;
@@ -46,7 +44,8 @@ router.get('/', function(req, res, next) {
       character.name.toLowerCase().includes(lowerSearch)
     );
   }
-
+  
+//Rota principal
   res.render('Personagens', {
     characters: characters,
     subheading: "Personagens",
