@@ -19,25 +19,3 @@
     <a href="/personagens">← Voltar</a>
   </div>
 </main>
-
-=======
-<%- include('./partials/header') %>
-
-<main>
-  <div class="ui segment">
-    <h1><%= character.name %></h1>
-    <p><strong>Descrição:</strong> <%= character.description %></p>
-
-    <h3>Habilidades:</h3>
-    <ul>
-      <% character.skills.forEach(function(skill) { %>
-        <li><%= skill %></li>
-      <% }); %>
-    </ul>
-
-    <a href="/personagens">← Voltar</a>
-  </div>
-</main>
-
->>>>>>> 21f072c (Testando commit via VS Code em 03/07/2025)
-<%- include('./partials/footer') %>
