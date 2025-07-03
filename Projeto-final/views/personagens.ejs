@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%- include('./partials/header') %>
 
 <html>
@@ -29,3 +30,36 @@
     <%- include('./partials/footer') %>
   </footer>
 </html>
+=======
+<%- include('./partials/header') %>
+
+<html>
+  <main>
+    <div class="ui segment">
+     <form method="GET" action="/personagens" class="ui small form" style="margin-bottom: 1rem;">
+       <div class="ui small action input">
+        <input type="text" name="search" placeholder="Buscar personagem..." value="<%= searchQuery || '' %>">
+        <button type="submit" class="ui small button">Buscar</button>
+      </div>
+     </form>
+      <h1 class="ui center aligned header">Personagens mais relevantes e que sempre estão presentes no mundo</h1>
+      <h2><%= subheading %></h2>
+
+      <ol>
+        <% characters.forEach(function(character) { %>
+          <li>
+            <a href="/personagens/<%= character.name %>">
+              <strong><%= character.name %></strong>
+            </a>
+          </li>
+        <% }); %>
+      </ol>
+
+    </div>
+  </main>
+
+  <footer>
+    <%- include('./partials/footer') %>
+  </footer>
+</html>
+>>>>>>> 21f072c (Testando commit via VS Code em 03/07/2025)

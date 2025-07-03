@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%- include('./partials/header') %>
   <main>
     <div class="ui segment">
@@ -20,4 +21,28 @@
   </footer>
 
   </body>
+=======
+<%- include('./partials/header') %>
+  <main>
+    <div class="ui segment">
+      <h1>Users Route</h1>
+      <p>This is the Users route</p>
+      <h2><%= subheading %></h2>
+      <ul>
+        <% characters.forEach(function(character) {%> 
+        <li class="ui segment">
+          <strong> <%= character.name %></strong>
+          is <%= character.role %> at O.E.S.T.E.
+          <% }); %>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <%- include('./partials/footer') %>
+  </footer>
+
+  </body>
+>>>>>>> 21f072c (Testando commit via VS Code em 03/07/2025)
 </html>
