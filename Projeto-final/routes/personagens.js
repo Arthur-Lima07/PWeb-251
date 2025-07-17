@@ -86,8 +86,8 @@ router.get('/', function(req, res, next) {
       character.name.toLowerCase().includes(lowerSearch)
     );
   }
-  
-//Rota principal
+  characters.sort((a, b) => a.name.localeCompare(b.name));
+
   res.render('Personagens', {
     characters: characters,
     subheading: "Personagens",
