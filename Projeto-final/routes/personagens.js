@@ -61,10 +61,18 @@ const allCharacters = [
     {
     name: 'Spectre',
     power: "Regeneração Celular/Manipulação de Cálcio",
-    passive: "Desprezo Fortalecedor(Quanto mais o usuário é insultado durante um combate mais fortes os golpes se tornam",
+    passive: "Desprezo Fortalecedor(Quanto mais o usuário é insultado durante um combate mais fortes os golpes se tornam)",
     description: 'Oswald foi amaldiçoado a não morrer desde a infância, viveu nas ruas da Inglaterra Medieval roubando comida e dinheiro, em um de seus roubos encontrou uma espada supostamente amaldiçoada chamada Beretta, mas por algum motivo, depois de soltar a espada nunca conseguia se lembrar das coisas que aconteceram enquanto ele segurava a espada, até que um dia, um cavaleiro da Ordem de São Jorge o pegou furtando algumas frutas, depois de perder um duelo para o cavaleiro em praça pública ele foi recrutado como "Escudeiro da Ordem de São Jorge" onde conheceu seus novos companheiros e a filha mais nova do rei, a princesa Dorote, desde sempre era conhecido pelas suas terríveis habilidades de esgrima, pelo seu pavio curto e por quebrar todas as espadas que caiam em suas mãos, exceto sua fiel espada amaldiçoada, após anos de treinamento foi promovido a cavaleiro oficial da Ordem sob o nome de Sir Oswald, mas, durante sua cerimonia de promoção um dragão negro atacou o castelo, o recente nomeado Sir Oswald foi encarregado de escoltar a princesa Dorote até uma cidade vizinha, onde era seguro, mas , durante a fuga o dragão encurrala a dupla, após perceber que seus companheiros e provavelmente todos no castelo haviam perecido, o cavaleiro decide enfrentar o dragão com sua espada amaldiçoada, mas, em seu primeiro golpe a espada quebra, e sem arma alguma para lutar, o dragão furiosamente ataca e mata o jovem cavaleiro e sequestra a princesa, porém, o que poucos sabem é que Oswald não morreu naquele dia, depois de aproximadamente 600 anos, foi encontrado sem nenhuma memória e com apenas os fragmentos de sua espada pelo Monarca Vampiro, Frank Stein, e ficou sob sua tutela com o nome provisório ,Chris Stein, como aprendiz de Frank Stein, Chris foi encarregado de enfrentar o Monarca do Caos, Sombra, que na época era inimigo de Frank, durante a luta, Sombra percebeu algo que ninguém nunca tinha percebido antes, Chris não quebrava as espadas por falta de habilidade, mas sim por possuir uma força completamente desumana, após a resolução de diversos mal-entendidos, Chris entra para o Conselho do Caos sob o codinome de Spectre ',
     skills: ['Soco desprezível', 'Espeto de Ossos', 'Renegeração', 'Spooky Scary Skeletons', 'Reforço de Cálcio' ],
     alias: 'O Imatável'
+  },
+   {
+    name: 'Kran',
+    power: "Transformação",
+    passive: "Liberdade do Escritor (Kran tem a capacidade de alterar o ambiente usando sua tinta)",
+    description: '',
+    skills: ['Lâmina de Tinta', 'Metamorfose', 'Maré de Tinta', 'Transformação Crítica'],
+    alias: 'O Contador de Histórias'
   }
 ];
 
@@ -87,7 +95,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-// Rota de detalhe para cada personagem
+
 router.get('/:name', function(req, res, next) {
   const characterName = req.params.name.toLowerCase();
   const character = allCharacters.find(c => c.name.toLowerCase() === characterName);
