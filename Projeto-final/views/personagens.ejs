@@ -1,31 +1,43 @@
-<%- include('./partials/header') %>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Personagens - Sombras e Caos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/personagens.css" rel="stylesheet">
+</head>
+<body>
 
-<html>
-  <main>
-    <div class="ui segment">
-     <form method="GET" action="/personagens" class="ui small form" style="margin-bottom: 1rem;">
-       <div class="ui small action input">
-        <input type="text" name="search" placeholder="Buscar personagem..." value="<%= searchQuery || '' %>">
-        <button type="submit" class="ui small button">Buscar</button>
-      </div>
-     </form>
-      <h1 class="ui center aligned header">Personagens mais relevantes e que sempre estão presentes no mundo</h1>
-      <h2><%= subheading %></h2>
+<%- include('partials/navbar') %>
 
-      <ol>
-        <% characters.forEach(function(character) { %>
-          <li>
-            <a href="/personagens/<%= character.name %>">
-              <strong><%= character.name %></strong>
-            </a>
-          </li>
-        <% }); %>
-      </ol>
-
+<div class="background">
+    <div class="container py-5 text-white">
+        <h1 class="mb-4 text-center">Personagens</h1>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-transparent">
+                <a href="/personagens/darkblaze" class="personagem-link">Darkblaze</a>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <a href="/personagens/king" class="personagem-link">King</a>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <a href="/personagens/olivier" class="personagem-link">Olivier</a>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <a href="/personagens/abel" class="personagem-link">Abel</a>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <a href="/personagens/ark" class="personagem-link">Ark</a>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <a href="/personagens/sett" class="personagem-link">Sett</a>
+            </li>
+            <li class="list-group-item bg-transparent">
+                <a href="/personagens/sombra" class="personagem-link">Sombra</a>
+            </li>
+        </ul>
     </div>
-  </main>
+</div>
 
-  <footer>
-    <%- include('./partials/footer') %>
-  </footer>
+</body>
 </html>

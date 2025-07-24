@@ -1,0 +1,29 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('../images/logo_oeste.svg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    padding-top: 40px;
+}
+
+h1 {
+    color: #fff;
+}
+
+.personagem-link {
+    color: #fff;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.personagem-link:hover {
+    color: #ffc107;
+}

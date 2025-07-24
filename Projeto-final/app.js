@@ -10,6 +10,7 @@ var personagensRouter = require('./routes/personagens');
 var historiaRouter = require('./routes/historia');
 var fichasRouter = require('./routes/fichas');
 var loginRouter = require('./routes/login');
+var signupRouter = require('./routes/signup');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/personagens', personagensRouter);
 app.use('/historia', historiaRouter);
 app.use('/fichas', fichasRouter);
 app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));

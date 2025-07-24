@@ -1,33 +1,45 @@
-<%- include('./partials/header') %>
-<html>
-  <body>
-    <%- include('partials/background') %>
-    <main>
-      <div class="ui segment">
-        <h1>Seja Bem-Vindo(a) ao mundo de Sombras e Caos, um rpg autoral do grupo Kasas</h1>
-        <h2>Aqui você tem algumas dicas de como montar seu personagem:</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Sombras e Caos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="stylesheets/home.css" rel="stylesheet">
+</head>
+<body>
+<%- include('partials/navbar') %>
+
+
+<div class="overlay">
+    <div class="container text-white py-5">
+        <h1 class="mb-4">Seja Bem-Vindo(a) ao mundo de Sombras e Caos, um RPG autoral do grupo Kasas</h1>
+        <h2 class="mb-3">Aqui você tem algumas dicas de como montar seu personagem:</h2>
         <h3>Primeiro você define o nome real do personagem, depois você define o nome de herói dele que pode ou não ter ligação com alguma característica do seu personagem</h3>
-        <p>Exemplo: Darkblaze(Tem uma pele totalmente preta e uma cabeça de fogo devido a experimentos)</p>
-        <p>Exemplo 2: King(O nome real dele é literalmente King)</p>
-        <h3>Agora é hora de escolher o poder do seu personagem(Por favor, tenha pena do mestre da sua mesa)</h3>
+        <p>Exemplo: Darkblaze (Tem uma pele totalmente preta e uma cabeça de fogo devido a experimentos)</p>
+        <p>Exemplo 2: King (O nome real dele é literalmente King)</p>
+
+        <h3>Agora é hora de escolher o poder do seu personagem (Por favor, tenha pena do mestre da sua mesa)</h3>
         <h4>Atenção: Seu personagem pode ou não ter um poder, a escolha é inteiramente do jogador</h4>
-        <p>Exemplo: Olivier: Tem o poder de absorver vida com uma mão e curar usando a vida armazenada</p>
-        <p>Exemplo 2: Abel: Não tem poder, mas é muito bom com armas de fogo </p>
-        <h3>Depois você escolhe a espécie do seu personagem(Não impacta os status, apenas o roleplay) </h3>
+        <p>Exemplo: Olivier — Tem o poder de absorver vida com uma mão e curar usando a vida armazenada</p>
+        <p>Exemplo 2: Abel — Não tem poder, mas é muito bom com armas de fogo</p>
+
+        <h3>Depois você escolhe a espécie do seu personagem (Não impacta os status, apenas o roleplay)</h3>
         <p>Exemplo: Ark, uma alien que parece um gato</p>
-        <p>Exemplo 2: Sett, um semideus egipcio</p>
+        <p>Exemplo 2: Sett, um semideus egípcio</p>
         <p>Exemplo 3: Sombra, um humano</p>
-        <h3>Após todas essas etapas é hora de distribuir os pontos, ao total são 32 pontos para distribuir em 5 status</h3>
-        <p>Físico: Define sua vida(Físico x 3) e a força física do seu personagem</p>
-        <p>Mental: Define a capacidade do seu personagem de resistir a ataques mentais e habilidades não físicas (Dreno de vida, ondas psíquicas, etc)</p>
-        <p>Elemento: Aumenta o dano causado por elementos, sejam eles de equipamentos ou gerados pela habilidade do seu personagem</p>
-        <p>Carisma: A capacidade do seu personagem de convencer os outros, pode afetar habilidades que necessitem do diálogo(Inverdade, Moral Suprema, etc)</p>
-        <p>Agilidade: A velocidade e a destreza do seu personagem, afeta o dano de ataques que se baseiam em velocidade</p>
-        <p>Poder: O quanto o seu personagem domina o próprio poder(Se seu personagem não tiver poder o valor é fixo em 0 até ele adquirir um poder), o valor é fixo em 5, só pode receber um ponto caso o seu personagem treine o seu poder, ou seja, não é permitido distribuir pontos para ele</p>
-      </div>
-    </main>
-    <footer>
-      <%- include('./partials/footer') %>
-    </footer>
-  </body>
+
+        <h3>Após todas essas etapas é hora de distribuir os pontos. Ao total são 32 pontos para distribuir em 5 status:</h3>
+        <p><strong>Físico:</strong> Define sua vida (Físico x 3) e a força física do seu personagem</p>
+        <p><strong>Mental:</strong> Define a capacidade do seu personagem de resistir a ataques mentais e habilidades não físicas (Dreno de vida, ondas psíquicas, etc)</p>
+        <p><strong>Elemento:</strong> Aumenta o dano causado por elementos, sejam eles de equipamentos ou gerados pela habilidade do seu personagem</p>
+        <p><strong>Carisma:</strong> A capacidade do seu personagem de convencer os outros, pode afetar habilidades que necessitem do diálogo (Inverdade, Moral Suprema, etc)</p>
+        <p><strong>Agilidade:</strong> A velocidade e a destreza do seu personagem, afeta o dano de ataques que se baseiam em velocidade</p>
+        <p><strong>Poder:</strong> O quanto o seu personagem domina o próprio poder (Se seu personagem não tiver poder o valor é fixo em 0 até ele adquirir um poder). O valor é fixo em 5, só pode receber um ponto caso o seu personagem treine o seu poder — ou seja, não é permitido distribuir pontos para ele.</p>
+    </div>
+    <div class="text-center py-4">
+    <a href="/historia" class="btn btn-outline-light btn-lg">Começar a aventura</a>
+</div>
+
+</div>
+</body>
 </html>
