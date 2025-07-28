@@ -8,7 +8,7 @@ body, html {
 }
 
 .overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* escurece o fundo para melhor leitura */
+    background-color: rgba(0, 0, 0, 0.7); 
     height: 100%;
     overflow-y: auto;
 }
