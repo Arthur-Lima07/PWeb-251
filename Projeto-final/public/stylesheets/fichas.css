@@ -1,63 +1,64 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background: url('../images/logo_oeste.svg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: Arial, sans-serif;
-    color: #fff;
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: url("../images/logo_oeste.svg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #fff;
 }
 
 .navbar .nav-link,
 .navbar .navbar-brand {
-    color: #fff !important;
+  color: #fff !important;
 }
 
 .navbar .nav-link:hover {
-    color: #ccc !important;
+  color: #ccc !important;
 }
 
 .container {
-    padding: 20px;
+  padding: 20px;
 }
 
 .lista-fichas {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .lista-fichas li {
-    background-color: #111;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: #111;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .form-ficha input,
 .form-ficha textarea {
-    background-color: #222;
-    border: 1px solid #555;
-    color: #fff;
-    padding: 8px;
-    width: 100%;
-    margin-bottom: 10px;
-    border-radius: 4px;
+  background-color: #222;
+  border: 1px solid #555;
+  color: #fff;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 4px;
 }
 
 .form-ficha textarea {
-    min-height: 80px;
-    resize: vertical;
+  min-height: 80px;
+  resize: vertical;
 }
 
 .atributos input {
-    width: calc(33% - 10px);
-    margin-right: 10px;
-    margin-bottom: 10px;
+  width: calc(33% - 10px);
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .atributos input:nth-child(3n) {
-    margin-right: 0;
+  margin-right: 0;
 }

@@ -1,20 +1,24 @@
-body, html {
+body,
+html {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: url('/images/logo_oeste.svg') no-repeat center center fixed;
-  background-size: cover;
+  background: url("/images/logo_oeste.svg") no-repeat center center fixed;
+  background-size: cover; /* melhor que contain para fundo */
   font-family: Arial, sans-serif;
+  color: white;
 }
 
+/* camada preta semi-transparente para contraste */
 .background {
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.7); /* preto com transparência */
   min-height: 100vh;
 }
 
-h1,h2{
-    color: #fff;
-     font-family: Cinzel, serif;
+h1,
+h2 {
+  color: #fff;
+  font-family: Cinzel, serif;
 }
 .personagem-link {
   color: #ffc107;

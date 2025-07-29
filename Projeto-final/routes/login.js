@@ -31,7 +31,7 @@ router.get('/logout', (req, res) => {
   req.session.destroy(err => {
     if (err) {
       console.error('Erro ao destruir sessão:', err);
-      return res.redirect('/historia'); 
+      return res.redirect('/historia');
     }
     res.redirect('/login');
   });

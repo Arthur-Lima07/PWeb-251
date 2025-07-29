@@ -1,53 +1,54 @@
 <%- include('partials/navbar') %>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/fichas.css">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="/stylesheets/fichas.css">
+  <div class="container">
+    <h2 class="mb-4">Olá, <%= usuarioNome %>!</h2>
+    <h3>Suas Fichas</h3>
 
-<div class="container">
-  <h2 class="mb-4">Olá, <%= usuarioNome %>!</h2>
+    <% if (fichas.length===0) { %>
+      <p>Você ainda não tem fichas. Crie a sua primeira abaixo!</p>
+      <% } else { %>
+        <ul class="lista-fichas">
+          <% fichas.forEach(ficha=> { %>
+            <li>
+              <strong>
+                <%= ficha.nome %>
+              </strong> — <%= ficha.especie %> nível <%= ficha.nivel %>
+                  <div class="acoes">
+                    <a href="/fichas/<%= ficha._id %>" class="btn btn-sm btn-info">Ver</a>
+                    <a href="/fichas/<%= ficha._id %>/editar" class="btn btn-sm btn-warning">Editar</a>
+                    <form action="/fichas/<%= ficha._id %>/excluir" method="POST" style="display:inline;">
+                      <button type="submit" class="btn btn-sm btn-danger"
+                        onclick="return confirm('Tem certeza que deseja excluir esta ficha?')">Excluir</button>
+                    </form>
+                  </div>
+            </li>
+            <% }) %>
+        </ul>
+        <% } %>
 
-  <h3>Suas Fichas</h3>
+          <h3 class="mt-5">Criar nova ficha</h3>
+          <form action="/fichas/nova" method="POST" class="form-ficha">
+            <input name="nome" placeholder="Nome" required>
+            <input name="especie" placeholder="Espécie" required>
+            <input name="nivel" type="number" placeholder="Nível" min="1" required>
+            <textarea name="descricao" placeholder="Descrição"></textarea>
 
-  <% if (fichas.length === 0) { %>
-    <p>Você ainda não tem fichas. Crie a sua primeira abaixo!</p>
-  <% } else { %>
-    <ul class="lista-fichas">
-      <% fichas.forEach(ficha => { %>
-        <li>
-          <strong><%= ficha.nome %></strong> — <%= ficha.classe %> nível <%= ficha.nivel %>
-          <div class="acoes">
-            <a href="/fichas/<%= ficha._id %>" class="btn btn-sm btn-info">Ver</a>
-            <a href="/fichas/<%= ficha._id %>/editar" class="btn btn-sm btn-warning">Editar</a>
-            <form action="/fichas/<%= ficha._id %>/excluir" method="POST" style="display:inline;">
-              <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza que deseja excluir esta ficha?')">Excluir</button>
-            </form>
-          </div>
-        </li>
-      <% }) %>
-    </ul>
-  <% } %>
+            <h5>Atributos</h5>
+            <div class="atributos">
+              <input name="fisico" placeholder="Físico" type="number" min="1" required>
+              <input name="tecnica" placeholder="Técnica" type="number" min="1" required>
+              <input name="agilidade" placeholder="Agilidade" type="number" min="1" required>
+              <input name="mental" placeholder="Mental" type="number" min="1" required>
+              <input name="elemento" placeholder="Elemento" type="number" min="1" required>
+              <input name="carisma" placeholder="Carisma" type="number" min="1" required>
+              <input name="poder" placeholder="Poder" type="number" min="1" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Criar Ficha</button>
+          </form>
 
-  <h3 class="mt-5">Criar nova ficha</h3>
-  <form action="/fichas/nova" method="POST" class="form-ficha">
-    <input name="nome" placeholder="Nome" required>
-    <input name="classe" placeholder="Classe" required>
-    <input name="raca" placeholder="Raça" required>
-    <input name="nivel" type="number" placeholder="Nível" min="1" required>
-    <textarea name="descricao" placeholder="Descrição"></textarea>
-
-    <h5>Atributos</h5>
-    <div class="atributos">
-      <input name="forca" placeholder="Força" type="number" min="1" required>
-      <input name="destreza" placeholder="Destreza" type="number" min="1" required>
-      <input name="constituicao" placeholder="Constituição" type="number" min="1" required>
-      <input name="inteligencia" placeholder="Inteligência" type="number" min="1" required>
-      <input name="sabedoria" placeholder="Sabedoria" type="number" min="1" required>
-      <input name="carisma" placeholder="Carisma" type="number" min="1" required>
-    </div>
-
-    <button type="submit" class="btn btn-primary mt-3">Criar Ficha</button>
-  </form>
-  <footer>
-        <%- include('partials/footer') %>
-    </footer>
-</div>
+          <footer>
+            <%- include('partials/footer') %>
+          </footer>
+  </div>

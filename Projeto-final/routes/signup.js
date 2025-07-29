@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Usuario = require('../models/usuario'); 
+const Usuario = require('../models/usuario');
 const bcrypt = require('bcrypt');
 
 const saltRounds = 10;
@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
     await novoUsuario.save();
     res.redirect('/login');
   } catch (err) {
-    if (err.code === 11000) { 
+    if (err.code === 11000) {
       return res.status(409).send('Email já cadastrado.');
     }
     console.error(err);

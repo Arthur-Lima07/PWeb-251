@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 var logger = require('morgan');
 const session = require('express-session');
 
-var app = express();  
+var app = express();
 
 app.use(session({
   secret: 'segredo_super_secreto',
@@ -16,8 +16,8 @@ app.use(session({
 }));
 
 mongoose.connect(process.env.MONGODB_URI)
-.then(() => console.log("🟢 Conectado ao MongoDB com sucesso!"))
-.catch((err) => console.error("🔴 Erro ao conectar no MongoDB:", err));
+  .then(() => console.log("🟢 Conectado ao MongoDB com sucesso!"))
+  .catch((err) => console.error("🔴 Erro ao conectar no MongoDB:", err));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -48,11 +48,11 @@ app.use('/fichas', verificaAutenticacao, fichasRouter);;
 app.use('/login', loginRouter);
 app.use('/signup', signupRouter);
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
