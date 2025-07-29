@@ -15,6 +15,13 @@ body, html {
 
 h1 {
     color: #fff;
+    font-family: Cinzel, serif;
+}
+
+sortSelect {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
 }
 
 .personagem-link {

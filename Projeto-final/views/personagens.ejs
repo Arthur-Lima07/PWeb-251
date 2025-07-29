@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Personagens - Sombras e Caos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="stylesheets/personagens.css" rel="stylesheet">
+    <link href="/stylesheets/personagens.css" rel="stylesheet">
 </head>
 <body>
 
@@ -12,32 +12,75 @@
 
 <div class="background">
     <div class="container py-5 text-white">
-        <h1 class="mb-4 text-center">Personagens</h1>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-transparent">
-                <a href="/personagens/darkblaze" class="personagem-link">Darkblaze</a>
-            </li>
-            <li class="list-group-item bg-transparent">
-                <a href="/personagens/king" class="personagem-link">King</a>
-            </li>
-            <li class="list-group-item bg-transparent">
-                <a href="/personagens/olivier" class="personagem-link">Olivier</a>
-            </li>
-            <li class="list-group-item bg-transparent">
-                <a href="/personagens/abel" class="personagem-link">Abel</a>
-            </li>
-            <li class="list-group-item bg-transparent">
-                <a href="/personagens/ark" class="personagem-link">Ark</a>
-            </li>
-            <li class="list-group-item bg-transparent">
-                <a href="/personagens/sett" class="personagem-link">Sett</a>
-            </li>
-            <li class="list-group-item bg-transparent">
-                <a href="/personagens/sombra" class="personagem-link">Sombra</a>
-            </li>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="mb-0">Personagens</h1>
+            <select id="sortSelect" class="form-select w-auto bg-dark text-white border-light">
+                <option value="az">Ordenar: A - Z</option>
+                <option value="za">Ordenar: Z - A</option>
+                <option value="recentes">Mais recentes</option>
+            </select>
+        </div>
+
+        <ul id="characterList" class="list-group list-group-flush">
+            <% characters.forEach(character => { %>
+                <li class="list-group-item bg-transparent">
+                    <a 
+                      href="/personagens/<%= character.name.toLowerCase().replace(/\s+/g, '') %>" 
+                      class="personagem-link" 
+                      data-name="<%= character.name %>">
+                        <%= character.name %>
+                    </a>
+                </li>
+            <% }) %>
         </ul>
     </div>
 </div>
 
+<script>
+
+  document.querySelectorAll('.personagem-link').forEach(link => {
+    link.addEventListener('click', () => {
+      let recent = JSON.parse(localStorage.getItem('recentCharacters')) || [];
+      const name = link.dataset.name;
+
+      recent = recent.filter(n => n !== name);
+      recent.unshift(name);
+
+      if (recent.length > 10) recent = recent.slice(0, 10);
+
+      localStorage.setItem('recentCharacters', JSON.stringify(recent));
+    });
+  });
+
+  document.getElementById('sortSelect').addEventListener('change', function () {
+    const value = this.value;
+    const list = document.getElementById('characterList');
+    const items = Array.from(list.querySelectorAll('li'));
+
+    let sorted;
+
+    if (value === 'az') {
+      sorted = items.sort((a, b) => 
+        a.innerText.localeCompare(b.innerText));
+    } else if (value === 'za') {
+      sorted = items.sort((a, b) => 
+        b.innerText.localeCompare(a.innerText));
+    } else if (value === 'recentes') {
+      const recent = JSON.parse(localStorage.getItem('recentCharacters')) || [];
+      sorted = items.sort((a, b) => {
+        const aName = a.querySelector('a').dataset.name;
+        const bName = b.querySelector('a').dataset.name;
+        return (recent.indexOf(aName) === -1 ? Infinity : recent.indexOf(aName)) -
+               (recent.indexOf(bName) === -1 ? Infinity : recent.indexOf(bName));
+      });
+    }
+
+    list.innerHTML = '';
+    sorted.forEach(item => list.appendChild(item));
+  });
+</script>
+<footer>
+    <%- include('partials/footer') %>
+</footer>
 </body>
 </html>

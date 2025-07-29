@@ -1,0 +1,28 @@
+<%- include('partials/navbar') %>
+
+<div class="container">
+  <h2><%= ficha.nome %></h2>
+  <p><strong>Classe:</strong> <%= ficha.classe %></p>
+  <p><strong>Raça:</strong> <%= ficha.raca %></p>
+  <p><strong>Nível:</strong> <%= ficha.nivel %></p>
+  <p><strong>Descrição:</strong> <%= ficha.descricao %></p>
+
+  <h4>Atributos:</h4>
+  <ul>
+    <% if (ficha.atributos) { %>
+      <% for (let key in ficha.atributos) { %>
+        <li><strong><%= key.charAt(0).toUpperCase() + key.slice(1) %>:</strong> <%= ficha.atributos[key] %></li>
+      <% } %>
+    <% } else { %>
+      <li>Nenhum atributo definido.</li>
+    <% } %>
+  </ul>
+
+  <div class="acoes mt-4">
+    <a href="/fichas" class="btn btn-secondary">Voltar</a>
+    <a href="/fichas/<%= ficha._id %>/editar" class="btn btn-warning">Editar</a>
+    <form action="/fichas/<%= ficha._id %>/excluir" method="POST" style="display:inline;">
+      <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja excluir esta ficha?')">Excluir</button>
+    </form>
+  </div>
+</div>

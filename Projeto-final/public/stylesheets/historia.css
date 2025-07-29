@@ -18,7 +18,7 @@ body, html {
 
 
 .content-box {
-    background-color: rgba(0, 0, 0, 0.75); /* caixa de conteúdo mais visível */
+    background-color: rgba(0, 0, 0, 0.75); 
     border-radius: 12px;
     max-width: 800px;
     width: 90%;

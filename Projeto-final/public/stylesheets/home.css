@@ -8,11 +8,16 @@ body, html {
 }
 
 .overlay {
-    background-color: rgba(0, 0, 0, 0.7); /* escurece o fundo para melhor leitura */
+    background-color: rgba(0, 0, 0, 0.7); 
     height: 100%;
     overflow-y: auto;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4 {
     color: #fff;
+    font-family: Cinzel, serif;
+}
+p{
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
